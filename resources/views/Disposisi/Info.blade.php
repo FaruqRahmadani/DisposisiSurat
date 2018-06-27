@@ -61,6 +61,16 @@
 							</tr>
 						</tbody>
 					</table>
+					<h4>Lampiran</h4>
+					<table class="table table-advance table-bordered">
+						<tbody>
+							<tr>
+								<th class="text-center">
+									<img src="{{asset('img/lampiran/'.$Disposisi->foto)}}">
+								</th>
+							</tr>
+						</tbody>
+					</table>
 					@if ($Disposisi->DisposisiKadin)
 						<div class="row">
 							<div class="col-md-6">
