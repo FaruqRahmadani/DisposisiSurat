@@ -1,0 +1,35 @@
+.navbar-brand {
+  text-transform: unset !important;
+  span > img {
+    height: 45px;
+    margin-top: -10px;
+  }
+}
+
+.box-login{
+  margin-top:40px;
+}
+
+.profile-usertitle {
+  margin: 0;
+  float: unset;
+  text-align: center;
+}
+
+.input-lg {
+  font-size: 14px;
+}
+
+.status-disposisi{
+  background: beige;
+}
+
+.col-info-disposisi{
+  tbody{
+    tr{
+      th:first-child{
+        width: 42%;
+      }
+    }
+  }
+}
