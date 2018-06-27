@@ -13,8 +13,7 @@ use App\Bidang;
 class DisposisiKadinController extends Controller
 {
   public function Data(){
-    $Disposisi = Disposisi::whereIn('status', [1,2])
-                          ->orderBy('id', 'desc')
+    $Disposisi = Disposisi::orderBy('id', 'desc')
                           ->get();
     return view('DisposisiKadin.Data', ['Disposisi' => $Disposisi]);
   }
@@ -30,7 +29,7 @@ class DisposisiKadinController extends Controller
   public function submitUpdate(Request $request, $Id){
     $Id = HCrypt::Decrypt($Id);
     $Disposisi = Disposisi::findOrFail($Id);
-    $Disposisi->status = 2;
+    $Disposisi->status = $request->bidang_id == 127 ? 127 : 2;
     $Disposisi->save();
 
     $DisposisiKadin = new DisposisiKadin;

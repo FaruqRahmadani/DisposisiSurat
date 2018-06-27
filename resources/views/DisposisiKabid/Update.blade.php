@@ -88,6 +88,20 @@
 					<form class="form-horizontal row-border" action="{{ Route('submit-Update-Disposisi-Kepala-Bidang', ['Id' => HCrypt::Encrypt($Disposisi->id)]) }}" method="POST">
 						{{csrf_field()}}
 						<div class="form-group">
+							<label class="col-md-2 control-label">Aksi Lanjutan</label>
+							<div class="col-md-10">
+								<select name="pegawai_id" class="form-control input-lg" required>
+									<option value="" selected hidden>Aksi Lanjutan</option>
+									<option value="127">Terima</option>
+									@foreach ($Pegawai as $DataPegawai)
+										@if (!$DataPegawai->User->tipe)
+											<option value="{{$DataPegawai->id}}" {{old('pegawai_id') == $DataPegawai->id ? 'selected' : ''}}>Teruskan Ke Staff - {{$DataPegawai->nama}}</option>
+										@endif
+									@endforeach
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
 							<label class="col-md-2 control-label">Catatan Kepala Bidang</label>
 							<div class="col-md-10">
 								<input type="text" name="catatan" class="form-control" required>

@@ -50,7 +50,7 @@ class Disposisi extends Model
         $return = 'Menunggu Aksi Staff Bidang';
       break;
       default:
-        $return = '-';
+        $return = 'Selesai';
     }
     return $return;
   }

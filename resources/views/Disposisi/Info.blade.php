@@ -77,8 +77,14 @@
 								<table class="table table-advance table-bordered col-info-disposisi">
 									<tbody>
 										<tr>
-											<th>Diteruskan Kepada Kepala</th>
-											<th>{{$Disposisi->DisposisiKadin->Bidang->nama}}</th>
+											<th>Aksi Lanjutan</th>
+											<th>
+												@if ($Disposisi->status != 127)
+													Diteruskan Ke Bidang {{$Disposisi->DisposisiKadin->Bidang->nama}}
+												@else
+													Diterima
+												@endif
+											</th>
 										</tr>
 									</tbody>
 								</table>
@@ -112,6 +118,16 @@
 								</tr>
 							</tbody>
 						</table>
+						@if ($Disposisi->DisposisiKabid->pegawai_id != 127)
+							<h4>Diteruskan Kepada Staff</h4>
+							<table class="table table-advance table-bordered">
+								<tbody>
+									<tr>
+										<th>{{$Disposisi->DisposisiKabid->Pegawai->nama}}</th>
+									</tr>
+								</tbody>
+							</table>
+						@endif
 					@endif
 				</div>
 			</div>
