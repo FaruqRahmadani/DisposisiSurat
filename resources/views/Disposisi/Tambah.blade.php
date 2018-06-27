@@ -59,6 +59,12 @@
 								<input type="text" name="perihal" class="form-control" required value="{{old('perihal')}}">
 							</div>
 						</div>
+						<div class="form-group">
+							<label class="col-md-2 control-label">Lampirkan Foto</label>
+							<div class="col-md-10">
+								<input type="file" name="foto" class="form-control" required value="{{old('foto')}}" accept="image/*">
+							</div>
+						</div>
 						<div class="row">
 							<div class="text-center">
 								<div class="col-md-12">
