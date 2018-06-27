@@ -7,7 +7,7 @@
 					<a href="{{Route('Data-Disposisi')}}" class="btn btn-sm btn-info">Kembali</a>
 				</div>
 				<div class="panel-body">
-					<form class="form-horizontal row-border" action="{{ Route('submit-Tambah-Disposisi') }}" method="POST">
+					<form class="form-horizontal row-border" action="{{ Route('submit-Tambah-Disposisi') }}" method="POST" enctype="multipart/form-data">
 						{{csrf_field()}}
 						<div class="form-group">
 							<label class="col-md-2 control-label">Dari</label>
