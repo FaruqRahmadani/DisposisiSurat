@@ -82,6 +82,13 @@
                   </a>
                 </li>
               @endif
+              @if (HAuth::Data()->jabatan == 2)
+                <li {{HRoute::ActiveRoute('Data-Disposisi-Staff')}}>
+                  <a href="{{ Route('Data-Disposisi-Staff') }}">
+                    <em class="fa fa-dashboard">&nbsp;</em> Disposisi
+                  </a>
+                </li>
+              @endif
             @endif
             <button-logout></button-logout>
           @endif

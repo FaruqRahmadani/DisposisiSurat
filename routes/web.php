@@ -47,4 +47,8 @@ Route::group(['middleware' => ['AuthMiddleware']], function () {
     Route::GET('update/{id}', 'DisposisiKabidController@Update')->name('Update-Disposisi-Kepala-Bidang');
     Route::POST('update/{id}', 'DisposisiKabidController@submitUpdate')->name('submit-Update-Disposisi-Kepala-Bidang');
   });
+
+  Route::prefix('disposisi/staff')->group(function () {
+    Route::GET('', 'DisposisiStaffController@Data')->name('Data-Disposisi-Staff');
+  });
 });
