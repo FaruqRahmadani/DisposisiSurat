@@ -50,5 +50,6 @@ Route::group(['middleware' => ['AuthMiddleware']], function () {
 
   Route::prefix('disposisi/staff')->group(function () {
     Route::GET('', 'DisposisiStaffController@Data')->name('Data-Disposisi-Staff');
+    Route::GET('terima/{id}', 'DisposisiStaffController@Terima')->name('Terima-Data-Disposisi-Staff');
   });
 });

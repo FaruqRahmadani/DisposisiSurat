@@ -212,6 +212,7 @@ return [
         'HAuth' => App\Helpers\AuthHelper::class,
         'HCrypt' => App\Helpers\CryptHelper::class,
         'HTanggal' => App\Helpers\TanggalHelper::class,
+        'HPenerima' => App\Helpers\PenerimaHelper::class,
     ],
 
 ];

@@ -20,15 +20,17 @@ class Pegawai extends Model
 
   public function getJabatanTextAttribute()
   {
-    if ($this->bidang_id == 1) {
-      $return = 'Kepala Dinas';
-    }else {
+    if ($this->User->tipe == 1) {
+      $return = 'Admin';
+    }elseif ($this->bidang_id == 1) {
+      $return = '';
+    }else{
       switch ($this->jabatan) {
         case 1:
           $return = 'Kepala Bidang';
         break;
         case 2:
-          $return = 'Staff';
+          $return = 'Staff Bidang';
         break;
         default:
           $return = '-';
@@ -38,7 +40,7 @@ class Pegawai extends Model
   }
 
   public function Bidang(){
-    return $this->belongsTo('App\Bidang')->withTrashed()->withoutGlobalScope('id');
+    return $this->belongsTo('App\Bidang')->withTrashed()->withoutGlobalScope('hideKadin');
   }
 
   public function User(){

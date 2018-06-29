@@ -12,14 +12,13 @@ class Bidang extends Model
   {
     parent::boot();
 
-    static::addGlobalScope('id', function (Builder $builder) {
+    static::addGlobalScope('hideKadin', function (Builder $builder) {
       $builder->where('id', '>', 1);
     });
   }
   use SoftDeletes;
 
   protected $fillable = ['nama'];
-
 
   public function Pegawai(){
     return $this->hasMany('App\Pegawai');

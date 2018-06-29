@@ -129,6 +129,44 @@
 							</table>
 						@endif
 					@endif
+					@if ($Disposisi->status == 127)
+						<div class="row">
+							<div class="col-md-6">
+								<h4 class="text-center">Tanda Terima</h4>
+								<table class="table table-advance table-bordered">
+									<tbody>
+										<tr>
+											<th>Jabatan</th>
+											<th>{{HPenerima::Pegawai($Disposisi)->JabatanText}} {{HPenerima::Pegawai($Disposisi)->Bidang->nama}}</th>
+										</tr>
+										<tr>
+											<th>Tanggal</th>
+											<th>{{HTanggal::Format($Disposisi->updated_at)}}</th>
+										</tr>
+										<tr>
+											<th>Nama</th>
+											<th>{{HPenerima::Pegawai($Disposisi)->nama}}</th>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="col-md-6">
+								<h4 class="text-center">Kepala Dinas</h4>
+								<table class="table table-advance table-bordered">
+									<tbody>
+										<tr>
+											<th>Tanggal</th>
+											<th>{{HTanggal::Format(Carbon\Carbon::Now())}}</th>
+										</tr>
+										<tr>
+											<th>Nama</th>
+											<th>{{HPenerima::KepalaDinas()->nama}}</th>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					@endif
 				</div>
 			</div>
 		</div>
