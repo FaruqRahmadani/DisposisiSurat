@@ -14,6 +14,7 @@ class Disposisi extends Model
   protected $fillable = [
     'dari',
     'nomor',
+    'tipe',
     'tanggal_surat',
     'tanggal_terima',
     'nomor_agenda',
@@ -53,6 +54,21 @@ class Disposisi extends Model
       break;
       default:
         $return = 'Selesai';
+    }
+    return $return;
+  }
+
+  public function getJenisSuratAttribute()
+  {
+    switch ($this->tipe) {
+      case 1:
+        $return = 'Surat Masuk';
+      break;
+      case 2:
+        $return = 'Surat Undangan';
+      break;
+      default:
+        $return = '-';
     }
     return $return;
   }

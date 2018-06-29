@@ -20,6 +20,10 @@
 							<table class="table table-advance table-bordered col-info-disposisi">
 								<tbody>
 									<tr>
+										<th>Jenis Surat</th>
+										<th>{{$Disposisi->JenisSurat}}</th>
+									</tr>
+									<tr>
 										<th>Surat Dari</th>
 										<th>{{$Disposisi->dari}}</th>
 									</tr>

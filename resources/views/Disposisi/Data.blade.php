@@ -11,6 +11,7 @@
 						<thead>
 							<tr>
 								<th class="text-center"> #</th>
+								<th class="text-center"> Jenis Surat</th>
                 <th class="text-center"> Dari</th>
                 <th class="text-center"> Nomor</th>
                 <th class="text-center"> Tanggal Surat</th>
@@ -24,6 +25,7 @@
 							@foreach ($Disposisi as $Index=>$DataDisposisi)
 								<tr>
 									<td>{{$Index+=1}}</td>
+									<td>{{$DataDisposisi->JenisSurat}}</td>
 									<td>{{$DataDisposisi->dari}}</td>
 									<td>{{$DataDisposisi->nomor}}</td>
 									<td>{{$DataDisposisi->tanggal_surat}}</td>

@@ -10,6 +10,17 @@
 					<form class="form-horizontal row-border" action="{{ Route('submit-Tambah-Disposisi') }}" method="POST" enctype="multipart/form-data">
 						{{csrf_field()}}
 						<div class="form-group">
+							<label class="col-md-2 control-label">Jenis Surat</label>
+							<div class="col-md-10">
+								<label class="radio-inline">
+									<input type="radio" name="tipe" value="1" {{old('tipe') == 1 ? 'checked' : ''}}>Surat Masuk
+								</label>
+								<label class="radio-inline">
+									<input type="radio" name="tipe" value="2" {{old('tipe') == 2 ? 'checked' : ''}}>Surat Undangan
+								</label>
+							</div>
+						</div>
+						<div class="form-group">
 							<label class="col-md-2 control-label">Dari</label>
 							<div class="col-md-10">
 								<input type="text" name="dari" class="form-control" required value="{{old('dari')}}">
