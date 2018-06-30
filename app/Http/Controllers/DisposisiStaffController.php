@@ -15,7 +15,7 @@ class DisposisiStaffController extends Controller
 {
   public function Data(){
     $DisposisiId = DisposisiKabid::where('pegawai_id', HAuth::Data()->id)
-                                 ->pluck('id')
+                                 ->pluck('disposisi_id')
                                  ->all();
     $Disposisi = Disposisi::whereIn('id', $DisposisiId)
                           ->orderBy('id', 'desc')
