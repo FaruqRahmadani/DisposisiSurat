@@ -21,7 +21,7 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-md-2 control-label">Dari</label>
+							<label class="col-md-2 control-label">Surat Dari</label>
 							<div class="col-md-10">
 								<input type="text" name="dari" class="form-control" required value="{{old('dari')}}">
 							</div>
