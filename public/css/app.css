@@ -12974,3 +12974,11 @@ p.back-link {
 .col-info-disposisi tbody tr th:first-child {
   width: 42%;
 }
+
+.navbar-custom {
+  background: #3093ce;
+}
+
+.paginate_button {
+  display: contents !important;
+}

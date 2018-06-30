@@ -21,7 +21,7 @@
           <span>
             <img src="{{ asset('img/logo/Banjarbaru.png') }}" alt="Banjarbaru">
           </span>
-          Dinas Kooperasi, Usaha Kecil, Menengah dan Tenaga Kerja
+          Manajemen Disposisi Surat
         </a>
       </div>
     </nav>
@@ -105,6 +105,15 @@
         @yield('content')
       </div>
     </div>
+    <footer class="footer">
+        <div class="container-fluid">
+          <nav class="pull-left">
+            <ul>
+            </ul>
+          </nav>
+          <p class="copyright pull-right"> Dinas Koperasi, UKM & Tenaga Kerja, Jl. Soekarno-Hatta (Samping AKR) Trikora - Kota Banjarbaru</p>
+        </div>
+      </footer>
     <script src="{{ asset('js/app.js') }}"></script>
     @if (session('alert'))
       <script type="text/javascript">
@@ -116,5 +125,6 @@
         notif('error', 'Error', '{{ $errors->first() }}');
       </script>
     @endif
+          
   </body>
   </html>
