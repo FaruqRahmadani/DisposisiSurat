@@ -16,9 +16,8 @@ class DisposisiKabidController extends Controller
 {
   public function Data(){
     $DisposisiId = DisposisiKadin::where('bidang_id', HAuth::Data()->bidang_id)
-                                 ->pluck('id')
+                                 ->pluck('disposisi_id')
                                  ->all();
-
     $Disposisi = Disposisi::whereIn('id', $DisposisiId)
                           ->orderBy('id', 'desc')
                           ->get();
