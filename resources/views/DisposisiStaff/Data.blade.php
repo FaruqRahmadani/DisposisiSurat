@@ -11,7 +11,6 @@
 						<thead>
 							<tr>
 								<th class="text-center"> #</th>
-								<th class="text-center"> Jenis Surat</th>
                 <th class="text-center"> Dari</th>
                 <th class="text-center"> Nomor</th>
                 <th class="text-center"> Tanggal Surat</th>
@@ -25,7 +24,6 @@
 							@foreach ($Disposisi as $Index=>$DataDisposisi)
 								<tr>
 									<td>{{$Index+=1}}</td>
-									<td>{{$DataDisposisi->JenisSurat}}</td>
 									<td>{{$DataDisposisi->dari}}</td>
 									<td>{{$DataDisposisi->nomor}}</td>
 									<td>{{$DataDisposisi->tanggal_surat}}</td>
@@ -33,9 +31,11 @@
 									<td>{{$DataDisposisi->perihal}}</td>
 									<td>{{$DataDisposisi->StatusText}}</td>
 									<td class="text-center">
-                    <a href="{{Route('Info-Disposisi', ['id' => HCrypt::Encrypt($DataDisposisi->id)])}}" class="btn btn-xs btn-primary">Info</a>
-										<a href="{{Route('Edit-Disposisi', ['id' => HCrypt::Encrypt($DataDisposisi->id)])}}" class="btn btn-xs btn-info">Edit</a>
-                    <button class="btn btn-xs btn-danger" onclick="hapus('{{Route('Hapus-Disposisi', ['id' => HCrypt::Encrypt($DataDisposisi->id)])}}')">Hapus</button>
+										@if ($DataDisposisi->status != 127)
+											<a href="{{Route('Terima-Data-Disposisi-Staff', ['id' => HCrypt::Encrypt($DataDisposisi->id)])}}" class="btn btn-xs btn-primary">Terima</a>
+										@else
+											<a href="{{Route('Info-Disposisi', ['id' => HCrypt::Encrypt($DataDisposisi->id)])}}" class="btn btn-xs btn-info">Info</a>
+										@endif
                   </td>
 								</tr>
 							@endforeach

@@ -13,6 +13,7 @@
                 <th class="text-center"> Tanggal Surat</th>
                 <th class="text-center"> Sifat</th>
 								<th class="text-center"> Perihal</th>
+								<th class="text-center"> Status</th>
 								<th class="text-center"> Action</th>
 							</tr>
 						</thead>
@@ -25,6 +26,7 @@
 									<td>{{$DataDisposisi->tanggal_surat}}</td>
 									<td>{{$DataDisposisi->SifatText}}</td>
 									<td>{{$DataDisposisi->perihal}}</td>
+									<td>{{$DataDisposisi->StatusText}}</td>
 									<td class="text-center">
                     @if ($DataDisposisi->status == 1)
                     	<a href="{{Route('Update-Disposisi-Kepala-Dinas', ['id' => HCrypt::Encrypt($DataDisposisi->id)])}}" class="btn btn-xs btn-primary">Update</a>

@@ -2,6 +2,8 @@
 
 namespace App;
 
+use HTanggal;
+
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -12,6 +14,7 @@ class Disposisi extends Model
   protected $fillable = [
     'dari',
     'nomor',
+    'tipe',
     'tanggal_surat',
     'tanggal_terima',
     'nomor_agenda',
@@ -48,6 +51,21 @@ class Disposisi extends Model
       break;
       case 3:
         $return = 'Menunggu Aksi Staff Bidang';
+      break;
+      default:
+        $return = 'Selesai';
+    }
+    return $return;
+  }
+
+  public function getJenisSuratAttribute()
+  {
+    switch ($this->tipe) {
+      case 1:
+        $return = 'Surat Masuk';
+      break;
+      case 2:
+        $return = 'Surat Undangan';
       break;
       default:
         $return = '-';

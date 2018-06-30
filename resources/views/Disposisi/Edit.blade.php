@@ -10,7 +10,18 @@
 					<form class="form-horizontal row-border" action="{{Route('submit-Edit-Disposisi', ['Id' => HCrypt::Encrypt($Disposisi->id)])}}" method="POST" enctype="multipart/form-data">
 						{{csrf_field()}}
 						<div class="form-group">
-							<label class="col-md-2 control-label">Dari</label>
+							<label class="col-md-2 control-label">Jenis Surat</label>
+							<div class="col-md-10">
+								<label class="radio-inline">
+									<input type="radio" name="tipe" value="1" {{$Disposisi->tipe == 1 ? 'checked' : ''}}>Surat Masuk
+								</label>
+								<label class="radio-inline">
+									<input type="radio" name="tipe" value="2" {{$Disposisi->tipe == 2 ? 'checked' : ''}}>Surat Undangan
+								</label>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-md-2 control-label">Surat Dari</label>
 							<div class="col-md-10">
 								<input type="text" name="dari" class="form-control" required value="{{$Disposisi->dari}}">
 							</div>
@@ -62,7 +73,7 @@
 						<div class="form-group">
 							<label class="col-md-2 control-label">Lampirkan Foto</label>
 							<div class="col-md-10">
-								<input type="file" name="foto" class="form-control" required value="{{old('foto')}}" accept="image/*">
+								<input type="file" name="foto" class="form-control" value="{{old('foto')}}" accept="image/*">
 								<small>Isi hanya jika merubah lampiran</small>
 							</div>
 						</div>

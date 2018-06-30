@@ -57,12 +57,13 @@
 					<form class="form-horizontal row-border" action="{{ Route('submit-Update-Disposisi-Kepala-Dinas', ['Id' => HCrypt::Encrypt($Disposisi->id)]) }}" method="POST">
 						{{csrf_field()}}
 						<div class="form-group">
-							<label class="col-md-2 control-label">Diterukskan Ke</label>
+							<label class="col-md-2 control-label">Aksi Lanjutan</label>
 							<div class="col-md-10">
 								<select name="bidang_id" class="form-control input-lg" required>
-									<option value="" selected hidden>Bidang</option>
+									<option value="" selected hidden>Aksi Lanjutan</option>
+									<option value="127">Terima</option>
 									@foreach ($Bidang as $DataBidang)
-										<option value="{{$DataBidang->id}}" {{old('bidang_id') == $DataBidang->id ? 'selected' : ''}}>{{$DataBidang->nama}}</option>
+										<option value="{{$DataBidang->id}}" {{old('bidang_id') == $DataBidang->id ? 'selected' : ''}}>Teruskan Ke Bidang {{$DataBidang->nama}}</option>
 									@endforeach
 								</select>
 							</div>
