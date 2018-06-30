@@ -7,7 +7,7 @@
 					<a href="{{ Route('Data-Disposisi') }}" class="btn btn-sm btn-info">Kembali</a>
 				</div>
 				<div class="panel-body">
-					<form class="form-horizontal row-border" action="{{Route('submit-Edit-Disposisi', ['Id' => HCrypt::Encrypt($Disposisi->id)])}}" method="POST">
+					<form class="form-horizontal row-border" action="{{Route('submit-Edit-Disposisi', ['Id' => HCrypt::Encrypt($Disposisi->id)])}}" method="POST" enctype="multipart/form-data">
 						{{csrf_field()}}
 						<div class="form-group">
 							<label class="col-md-2 control-label">Dari</label>
@@ -57,6 +57,13 @@
 							<label class="col-md-2 control-label">Perihal</label>
 							<div class="col-md-10">
 								<input type="text" name="perihal" class="form-control" required value="{{$Disposisi->perihal}}">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-md-2 control-label">Lampirkan Foto</label>
+							<div class="col-md-10">
+								<input type="file" name="foto" class="form-control" required value="{{old('foto')}}" accept="image/*">
+								<small>Isi hanya jika merubah lampiran</small>
 							</div>
 						</div>
 						<div class="row">

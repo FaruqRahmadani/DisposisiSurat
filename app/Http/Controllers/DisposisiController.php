@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
+use Storage;
 use HCrypt;
+use File;
 
 use Illuminate\Http\Request;
 
@@ -22,6 +25,11 @@ class DisposisiController extends Controller
   public function submitTambah(Request $request){
     $Disposisi = new Disposisi;
     $Disposisi->fill($request->all());
+    $FotoExt  = $request->foto->getClientOriginalExtension();
+    $NamaFoto = Carbon::now()->format('dmYHis');
+    $Foto = $NamaFoto.'.'.$FotoExt;
+    $request->foto->move(public_path('img/lampiran'), $Foto);
+    $Disposisi->foto = $Foto;
     $Disposisi->save();
 
     return redirect()->route('Data-Disposisi')->with(['alert' => 'alert', 'tipe' => 'success', 'judul' => 'Berhasil', 'pesan' => 'Data Berhasil di Simpan']);
@@ -38,6 +46,15 @@ class DisposisiController extends Controller
     $Id = HCrypt::Decrypt($Id);
     $Disposisi = Disposisi::findOrFail($Id);
     $Disposisi->fill($request->all());
+    if ($request->foto) {
+      $FotoExt  = $request->foto->getClientOriginalExtension();
+      $NamaFoto = Carbon::now()->format('dmYHis');
+      $Foto = $NamaFoto.'.'.$FotoExt;
+      $request->foto->move(public_path('img/lampiran'), $Foto);
+      File::delete('img/lampiran/'.$Disposisi->foto);
+      $Disposisi->foto = $Foto;
+      $Disposisi->save();
+    }
     $Disposisi->save();
 
     return redirect()->route('Data-Disposisi')->with(['alert' => 'alert', 'tipe' => 'success', 'judul' => 'Berhasil', 'pesan' => 'Data Berhasil di Ubah']);
