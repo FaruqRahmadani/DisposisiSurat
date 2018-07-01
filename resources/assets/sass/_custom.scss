@@ -42,8 +42,12 @@
   display: contents !important;
 }
 
-.footer-bottom {
-    background-color: #15224f;
-    min-height: 30px;
-    width: 100%;
+.navbar-footer{
+  font-size: 12pt;
+  color: white;
+  line-height: 31px;
+}
+
+.dataTables_paginate{
+  text-align: right;
 }
