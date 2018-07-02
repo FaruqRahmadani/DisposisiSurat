@@ -6,26 +6,30 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateKegiatansTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
-    public function up()
-    {
-        Schema::create('kegiatans', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
-        });
-    }
+  /**
+  * Run the migrations.
+  *
+  * @return void
+  */
+  public function up()
+  {
+    Schema::create('kegiatans', function (Blueprint $table) {
+      $table->increments('id');
+      $table->date('tanggal');
+      $table->string('uraian');
+      $table->string('tempat');
+      $table->text('keterangan');
+      $table->timestamps();
+    });
+  }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-        Schema::dropIfExists('kegiatans');
-    }
+  /**
+  * Reverse the migrations.
+  *
+  * @return void
+  */
+  public function down()
+  {
+    Schema::dropIfExists('kegiatans');
+  }
 }
