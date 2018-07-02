@@ -16,7 +16,7 @@ class CreateKegiatansTable extends Migration
     Schema::create('kegiatans', function (Blueprint $table) {
       $table->increments('id');
       $table->date('tanggal');
-      $table->string('uraian');
+      $table->text('uraian');
       $table->string('tempat');
       $table->text('keterangan');
       $table->timestamps();
