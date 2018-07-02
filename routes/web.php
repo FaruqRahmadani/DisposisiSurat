@@ -52,4 +52,8 @@ Route::group(['middleware' => ['AuthMiddleware']], function () {
     Route::GET('', 'DisposisiStaffController@Data')->name('Data-Disposisi-Staff');
     Route::GET('terima/{id}', 'DisposisiStaffController@Terima')->name('Terima-Data-Disposisi-Staff');
   });
+
+  Route::prefix('cetak')->group(function () {
+    Route::GET('disposisi/{id}', 'CetakController@Disposisi')->name('Cetak-Disposisi');
+  });
 });
