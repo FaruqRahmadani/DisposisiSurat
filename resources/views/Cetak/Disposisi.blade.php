@@ -4,7 +4,7 @@
 		<title>Disposisi</title>
 		<style>
 			.title{
-				font-size: 9pt;
+				font-size: 10pt;
 				font-weight: bold;
 			}
 			.content{
