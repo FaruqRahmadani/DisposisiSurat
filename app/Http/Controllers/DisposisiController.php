@@ -20,7 +20,8 @@ class DisposisiController extends Controller
   }
 
   public function Tambah(){
-    $DisposisiId = Disposisi::get()->last()->id+1;
+    $Disposisi = Disposisi::get();
+    $DisposisiId = $Disposisi ? $Disposisi->last()->id+1 : 1;
     return view('Disposisi.Tambah', ['DisposisiId' => $DisposisiId]);
   }
 
