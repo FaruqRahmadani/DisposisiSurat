@@ -24,7 +24,26 @@
 						<div class="form-group">
 							<label class="col-md-2 control-label">Golongan</label>
 							<div class="col-md-10">
-								<input type="text" name="golongan" class="form-control" required value="{{old('golongan')}}">
+								<select name="golongan" class="form-control input-lg" required>
+									<option value="" selected hidden>Golongan</option>
+									<option value="IA">IA</option>
+									<option value="IB">IB</option>
+									<option value="IC">IC</option>
+									<option value="ID">ID</option>
+									<option value="IIA">IIA</option>
+									<option value="IIB">IIB</option>
+									<option value="IIC">IIC</option>
+									<option value="IID">IID</option>
+									<option value="IIIA">IIIA</option>
+									<option value="IIIB">IIIB</option>
+									<option value="IIIC">IIIC</option>
+									<option value="IIID">IIID</option>
+									<option value="IVA">IVA</option>
+									<option value="IVB">IVB</option>
+									<option value="IVC">IVC</option>
+									<option value="IVD">IVD</option>
+									<option value="IVE">IVE</option>
+								</select>
 							</div>
 						</div>
 						<div class="form-group">

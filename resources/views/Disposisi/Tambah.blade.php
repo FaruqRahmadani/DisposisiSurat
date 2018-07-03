@@ -47,7 +47,7 @@
 						<div class="form-group">
 							<label class="col-md-2 control-label">Nomor Agenda</label>
 							<div class="col-md-10">
-								<input type="text" name="nomor_agenda" class="form-control" required value="{{old('nomor_agenda')}}">
+								<input type="text" name="nomor_agenda" class="form-control" required value="{{sprintf("%04s", $DisposisiId)}}" readonly>
 							</div>
 						</div>
 						<div class="form-group">

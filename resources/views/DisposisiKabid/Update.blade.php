@@ -53,6 +53,16 @@
 							</tr>
 						</tbody>
 					</table>
+					<h4>Lampiran</h4>
+					<table class="table table-advance table-bordered">
+						<tbody>
+							<tr>
+								<th class="text-center">
+									<img src="{{asset('img/lampiran/'.$Disposisi->foto)}}">
+								</th>
+							</tr>
+						</tbody>
+					</table>
 					<hr>
 					<div class="row">
 						<div class="col-md-6">
@@ -104,7 +114,7 @@
 						<div class="form-group">
 							<label class="col-md-2 control-label">Catatan Kepala Bidang</label>
 							<div class="col-md-10">
-								<input type="text" name="catatan" class="form-control" required>
+								<textarea name="catatan" rows="8" cols="80" class="form-control"></textarea>
 							</div>
 						</div>
 						<div class="row">

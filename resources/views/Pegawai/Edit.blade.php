@@ -24,7 +24,26 @@
 						<div class="form-group">
 							<label class="col-md-2 control-label">Golongan</label>
 							<div class="col-md-10">
-								<input type="text" name="golongan" class="form-control" required value="{{$Pegawai->golongan}}">
+								<select name="golongan" class="form-control input-lg" required>
+									<option value="" selected hidden>Golongan</option>
+									<option value="IA" {{$Pegawai->golongan == 'IA' ? 'selected' : ''}}>IA</option>
+									<option value="IB" {{$Pegawai->golongan == 'IB' ? 'selected' : ''}}>IB</option>
+									<option value="IC" {{$Pegawai->golongan == 'IC' ? 'selected' : ''}}>IC</option>
+									<option value="ID" {{$Pegawai->golongan == 'ID' ? 'selected' : ''}}>ID</option>
+									<option value="IIA" {{$Pegawai->golongan == 'IIA' ? 'selected' : ''}}>IIA</option>
+									<option value="IIB" {{$Pegawai->golongan == 'IIB' ? 'selected' : ''}}>IIB</option>
+									<option value="IIC" {{$Pegawai->golongan == 'IIC' ? 'selected' : ''}}>IIC</option>
+									<option value="IID" {{$Pegawai->golongan == 'IID' ? 'selected' : ''}}>IID</option>
+									<option value="IIIA" {{$Pegawai->golongan == 'IIIA' ? 'selected' : ''}}>IIIA</option>
+									<option value="IIIB" {{$Pegawai->golongan == 'IIIB' ? 'selected' : ''}}>IIIB</option>
+									<option value="IIIC" {{$Pegawai->golongan == 'IIIC' ? 'selected' : ''}}>IIIC</option>
+									<option value="IIID" {{$Pegawai->golongan == 'IIID' ? 'selected' : ''}}>IIID</option>
+									<option value="IVA" {{$Pegawai->golongan == 'IVA' ? 'selected' : ''}}>IVA</option>
+									<option value="IVB" {{$Pegawai->golongan == 'IVB' ? 'selected' : ''}}>IVB</option>
+									<option value="IVC" {{$Pegawai->golongan == 'IVC' ? 'selected' : ''}}>IVC</option>
+									<option value="IVD" {{$Pegawai->golongan == 'IVD' ? 'selected' : ''}}>IVD</option>
+									<option value="IVE" {{$Pegawai->golongan == 'IVE' ? 'selected' : ''}}>IVE</option>
+								</select>
 							</div>
 						</div>
 						<div class="form-group">

@@ -73,6 +73,11 @@
                   <em class="fa fa-dashboard">&nbsp;</em> Disposisi
                 </a>
               </li>
+              <li {{HRoute::ActiveRoute('Data-Kegiatan')}}>
+                <a href="{{ Route('Data-Kegiatan') }}">
+                  <em class="fa fa-dashboard">&nbsp;</em> Kegiatan
+                </a>
+              </li>
             @elseif (HAuth::Data()->bidang_id == 1)
               <li {{HRoute::ActiveRoute('Data-Disposisi-Kepala-Dinas')}}>
                 <a href="{{ Route('Data-Disposisi-Kepala-Dinas') }}">
@@ -95,11 +100,6 @@
                 </li>
               @endif
             @endif
-            <li {{HRoute::ActiveRoute('Data-Kegiatan')}}>
-              <a href="{{ Route('Data-Kegiatan') }}">
-                <em class="fa fa-dashboard">&nbsp;</em> Kegiatan
-              </a>
-            </li>
             <button-logout></button-logout>
           @endif
         </ul>

@@ -14,12 +14,14 @@ use App\Disposisi;
 class DisposisiController extends Controller
 {
   public function Data(){
-    $Disposisi = Disposisi::all();
+    $Disposisi = Disposisi::orderBy('created_at', 'desc')
+                          ->get();
     return view('Disposisi.Data', ['Disposisi' => $Disposisi]);
   }
 
   public function Tambah(){
-    return view('Disposisi.Tambah');
+    $DisposisiId = Disposisi::get()->last()->id+1;
+    return view('Disposisi.Tambah', ['DisposisiId' => $DisposisiId]);
   }
 
   public function submitTambah(Request $request){

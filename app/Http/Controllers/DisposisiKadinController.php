@@ -13,7 +13,7 @@ use App\Bidang;
 class DisposisiKadinController extends Controller
 {
   public function Data(){
-    $Disposisi = Disposisi::orderBy('id', 'desc')
+    $Disposisi = Disposisi::orderBy('created_at', 'desc')
                           ->get();
     return view('DisposisiKadin.Data', ['Disposisi' => $Disposisi]);
   }
