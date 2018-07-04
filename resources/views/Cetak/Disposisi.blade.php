@@ -2,6 +2,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Disposisi</title>
+  		<link rel="shortcut icon" type="image/png" href="{{ asset('img/logo/Banjarbaru-icon.png') }}"/>
 		<style>
 			.title{
 				font-size: 10pt;
@@ -17,11 +18,36 @@
 		</style>
 	</head>
 	<body>
+		{{-- kop surat  --}}
+		<table width="100%" align="center">
+			<tr>
+				{{-- logo --}}
+				<td width="20%">
+            		<img width="80px" src="" alt="Banjarbaru">
+				</td>
+				{{-- kop surat --}}
+				<td align="center">
+					<b>
+						DINAS KOPERASI, UKM & TENAGA KERJA
+						<br>
+						KOTA BANJARBARU
+					</b>
+					<br>
+					Jl. Soekarno-Hatta (Samping AKR) Trikora - Kota Banjarbaru
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<hr>
+				</td>
+			</tr>
+		</table>
+		{{-- lembar disposisi --}}
 		<table border="1" cellspacing="0" width="100%">
 			<tr>
 				<td colspan="2" align="center" style="line-height: 20pt; padding-bottom: 10px;">
 					<b>
-						LEMBAR DISPOSISI
+					LEMBAR DISPOSISI
 					</b>
 				</td>
 			</tr>
@@ -126,61 +152,61 @@
 				<td width="100%" colspan="2">
 					<table width="100%">
 						<tr>
-				<td width="50%">
-					<br>
-					<table class="content" width="100%">
-						{{-- di isi oleh staff --}}
-						<tr>
-							<td class="title" colspan="3" align="center">
-								Tanda Terima
+							<td width="50%">
 								<br>
+								<table class="content" width="100%">
+									{{-- di isi oleh staff --}}
+									<tr>
+										<td class="title" colspan="3" align="center">
+											Tanda Terima
+											<br>
+											<br>
+										</td>
+									</tr>
+									<tr>
+										<td class="title" width="45%" align="left">JABATAN</td>
+										<td width="5%"> : </td>
+										<td align="left">ini jabatan</td>
+									</tr>
+									<tr>
+										<td class="title" width="45%" align="left">TANGGAL</td>
+										<td width="5%"> : </td>
+										<td align="left">ini tanggal terima dan hari</td>
+									</tr>
+									<tr>
+										<td class="title" width="45%" align="left">NAMA</td>
+										<td width="5%"> : </td>
+										<td align="left">ini nama</td>
+									</tr>
+								</table>
+								<br>
+							</td>
+							<td>
+								<br>
+								<table class="content" width="100%">
+									<tr>
+										<td class="title" colspan="3" align="center">
+											Kepala Dinas Koperasi, UKM dan Tenaga Kerja
+											<br>
+											Kota Banjarbaru
+											<br>
+											<br>
+										</td>
+									</tr>
+									<tr>
+										<td class="title" width="45%" align="left">TANGGAL</td>
+										<td width="5%"> : </td>
+										<td align="left">ini tanggal terima dan hari</td>
+									</tr>
+									<tr>
+										<td class="title" width="45%" align="left">NAMA</td>
+										<td width="5%"> : </td>
+										<td align="left">ini nama</td>
+									</tr>
+								</table>
 								<br>
 							</td>
 						</tr>
-						<tr>
-							<td class="title" width="45%" align="left">JABATAN</td>
-							<td width="5%"> : </td>
-							<td align="left">ini jabatan</td>
-						</tr>
-						<tr>
-							<td class="title" width="45%" align="left">TANGGAL</td>
-							<td width="5%"> : </td>
-							<td align="left">ini tanggal terima dan hari</td>
-						</tr>
-						<tr>
-							<td class="title" width="45%" align="left">NAMA</td>
-							<td width="5%"> : </td>
-							<td align="left">ini nama</td>
-						</tr>
-					</table>
-					<br>
-				</td>
-				<td>
-					<br>
-					<table class="content" width="100%">
-						<tr>
-							<td class="title" colspan="3" align="center">
-								Kepala Dinas Koperasi, UKM dan Tenaga Kerja
-								<br>
-								Kota Banjarbaru
-								<br>
-								<br>
-							</td>
-						</tr>
-						<tr>
-							<td class="title" width="45%" align="left">TANGGAL</td>
-							<td width="5%"> : </td>
-							<td align="left">ini tanggal terima dan hari</td>
-						</tr>
-						<tr>
-							<td class="title" width="45%" align="left">NAMA</td>
-							<td width="5%"> : </td>
-							<td align="left">ini nama</td>
-						</tr>
-					</table>
-					<br>
-				</td>
-			</tr>
 					</table>
 				</td>
 			</tr>
