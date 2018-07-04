@@ -32,17 +32,17 @@
 						<tr>
 							<td class="title" width="45%" align="right">SURAT DARI</td>
 							<td width="5%"> : </td>
-							<td align="left">ini asal surat</td>
+							<td align="left">{{$Disposisi->dari}}</td>
 						</tr>
 						<tr>
 							<td class="title" width="45%" align="right">NOMOR SURAT</td>
 							<td width="5%"> : </td>
-							<td align="left">ini nomor surat</td>
+							<td align="left">{{$Disposisi->nomor}}</td>
 						</tr>
 						<tr>
 							<td class="title" width="45%" align="right">TANGGAL SURAT</td>
 							<td width="5%"> : </td>
-							<td align="left">ini tanggal surat</td>
+							<td align="left">{{HTanggal::Format($Disposisi->tanggal_surat)}}</td>
 						</tr>
 					</table>
 					<br>
@@ -53,17 +53,17 @@
 						<tr>
 							<td class="title" width="45%" align="right">DITERIMA TANGGAL</td>
 							<td width="5%"> : </td>
-							<td align="left">ini tanggal terima</td>
+							<td align="left">{{HTanggal::Format($Disposisi->tanggal_terima)}}</td>
 						</tr>
 						<tr>
 							<td class="title" width="45%" align="right">NOMOR AGENDA</td>
 							<td width="5%"> : </td>
-							<td align="left">ini nomor agenda surat</td>
+							<td align="left">{{$Disposisi->nomor_agenda}}</td>
 						</tr>
 						<tr>
 							<td class="title" width="45%" align="right">SIFAT</td>
 							<td width="5%"> : </td>
-							<td align="left">ini sifat surat</td>
+							<td align="left">{{$Disposisi->SifatText}}</td>
 						</tr>
 					</table>
 					<br>
@@ -75,7 +75,7 @@
 						PERIHAL :
 					</p>
 					<p class="content">
-						ini perihal dan lainnya
+						{{$Disposisi->perihal}}
 					</p>
 				</td>
 			</tr>
@@ -86,10 +86,12 @@
 					</p>
 					<p class="content">
 						<ul>
-							<li>ini daftar terusan</li>
-							<li>ini daftar terusan</li>
-							<li>ini daftar terusan</li>
-							<li>ini daftar terusan</li>
+							@if ($Disposisi->DisposisiKabid)
+								<li>Kepala Bidang {{$Disposisi->DisposisiKadin->Bidang->nama}}</li>
+								@if ($Disposisi->DisposisiKabid->pegawai_id != 127)
+									<li>Staff {{$Disposisi->DisposisiKabid->Pegawai->nama}}</li>
+								@endif
+							@endif
 						</ul>
 					</p>
 				</td>
@@ -98,7 +100,7 @@
 						Dengan Hormat Harap  :
 					</p>
 					<p class="content">
-						ini isi dari aksi yang dibutuhkan
+						{{$Disposisi->DisposisiKadin->status}}
 					</p>
 				</td>
 			</tr>
@@ -108,7 +110,7 @@
 						Catatan Kepala Dinas :
 					</p>
 					<p class="content">
-						ini catatan kepala dinas
+						{{$Disposisi->DisposisiKadin->catatan}}
 					</p>
 				</td>
 			</tr>
@@ -118,7 +120,7 @@
 						Catatan Kabid. XXXXX :
 					</p>
 					<p class="content">
-						ini catatan dari kabid
+						{{$Disposisi->DisposisiKabid->catatan}}
 					</p>
 				</td>
 			</tr>
@@ -140,17 +142,17 @@
 						<tr>
 							<td class="title" width="45%" align="left">JABATAN</td>
 							<td width="5%"> : </td>
-							<td align="left">ini jabatan</td>
+							<td align="left">{{HPenerima::Pegawai($Disposisi)->JabatanText}} {{HPenerima::Pegawai($Disposisi)->Bidang->nama}}</td>
 						</tr>
 						<tr>
 							<td class="title" width="45%" align="left">TANGGAL</td>
 							<td width="5%"> : </td>
-							<td align="left">ini tanggal terima dan hari</td>
+							<td align="left">{{HTanggal::Format($Disposisi->updated_at)}}</td>
 						</tr>
 						<tr>
 							<td class="title" width="45%" align="left">NAMA</td>
 							<td width="5%"> : </td>
-							<td align="left">ini nama</td>
+							<td align="left">{{HPenerima::Pegawai($Disposisi)->nama}}</td>
 						</tr>
 					</table>
 					<br>
@@ -170,12 +172,12 @@
 						<tr>
 							<td class="title" width="45%" align="left">TANGGAL</td>
 							<td width="5%"> : </td>
-							<td align="left">ini tanggal terima dan hari</td>
+							<td align="left">{{HTanggal::Format(Carbon\Carbon::Now())}}</td>
 						</tr>
 						<tr>
 							<td class="title" width="45%" align="left">NAMA</td>
 							<td width="5%"> : </td>
-							<td align="left">ini nama</td>
+							<td align="left">{{HPenerima::KepalaDinas()->nama}}</td>
 						</tr>
 					</table>
 					<br>
