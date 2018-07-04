@@ -17,6 +17,25 @@
 	</style>
 </head>
 <body>
+	<table width="100%" align="center">
+		<tr>
+			<td width="15%" align="center">
+				<img height="70px" src="../public/img/logo/Banjarbaru.png" alt="Banjarbaru">
+			</td>
+			<td align="center">
+				<b class="title">
+				PEMERINTAH KOTA BANJARBARU
+				</b>
+				<br>
+				<b style="font-size: 13pt">
+					DINAS KOPERASI, USAHA KECIL MENEGAH DAN TENAGA KERJA
+				</b>
+				<br>
+				Alamat : Jl. Soekarno-Hatta (Samping AKR) Trikora - Kota Banjarbaru
+			</td>
+		</tr>
+	</table>
+	<br>
 	<table border="1" cellspacing="0" width="100%">
 		<tr>
 			<td colspan="2" align="center" style="line-height: 20pt; padding-bottom: 10px;">
