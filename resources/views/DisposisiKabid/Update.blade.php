@@ -114,7 +114,7 @@
 						<div class="form-group">
 							<label class="col-md-2 control-label">Catatan Kepala Bidang</label>
 							<div class="col-md-10">
-								<textarea name="catatan" rows="8" cols="80" class="form-control"></textarea>
+								<textarea name="catatan" rows="8" cols="80" class="form-control" required></textarea>
 							</div>
 						</div>
 						<div class="row">

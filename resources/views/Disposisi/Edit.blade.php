@@ -13,10 +13,10 @@
 							<label class="col-md-2 control-label">Jenis Surat</label>
 							<div class="col-md-10">
 								<label class="radio-inline">
-									<input type="radio" name="tipe" value="1" {{$Disposisi->tipe == 1 ? 'checked' : ''}}>Surat Masuk
+									<input type="radio" name="tipe" value="1" {{$Disposisi->tipe == 1 ? 'checked' : ''}} required>Surat Masuk
 								</label>
 								<label class="radio-inline">
-									<input type="radio" name="tipe" value="2" {{$Disposisi->tipe == 2 ? 'checked' : ''}}>Surat Undangan
+									<input type="radio" name="tipe" value="2" {{$Disposisi->tipe == 2 ? 'checked' : ''}} required>Surat Undangan
 								</label>
 							</div>
 						</div>
@@ -54,13 +54,13 @@
 							<label class="col-md-2 control-label">Sifat</label>
 							<div class="col-md-10">
 								<label class="radio-inline">
-									<input type="radio" name="sifat" value="1" {{$Disposisi->sifat == 1 ? 'checked' : ''}}>Sangat Segera
+									<input type="radio" name="sifat" value="1" {{$Disposisi->sifat == 1 ? 'checked' : ''}} required>Sangat Segera
 								</label>
 								<label class="radio-inline">
-									<input type="radio" name="sifat" value="2" {{$Disposisi->sifat == 2 ? 'checked' : ''}}>Segera
+									<input type="radio" name="sifat" value="2" {{$Disposisi->sifat == 2 ? 'checked' : ''}} required>Segera
 								</label>
 								<label class="radio-inline">
-									<input type="radio" name="sifat" value="3" {{$Disposisi->sifat == 3 ? 'checked' : ''}}>Rahasia
+									<input type="radio" name="sifat" value="3" {{$Disposisi->sifat == 3 ? 'checked' : ''}} required>Rahasia
 								</label>
 							</div>
 						</div>

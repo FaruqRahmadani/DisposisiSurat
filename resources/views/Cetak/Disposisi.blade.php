@@ -138,7 +138,7 @@
 				<tr>
 				<td colspan="2">
 					<p class="title content" >
-						Catatan Kabid. XXXXX :
+						Catatan Kabid. {{$Disposisi->DisposisiKadin->Bidang->nama}} :
 					</p>
 					<p class="content">
 						{{$Disposisi->DisposisiKabid->catatan}}
