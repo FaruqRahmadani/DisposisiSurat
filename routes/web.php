@@ -64,5 +64,11 @@ Route::group(['middleware' => ['AuthMiddleware']], function () {
 
   Route::prefix('cetak')->group(function () {
     Route::GET('disposisi/{id?}', 'CetakController@Disposisi')->name('Cetak-Disposisi');
+    Route::GET('disposisi/{bulan}/{tahun}', 'CetakController@DisposisiFilter')->name('Cetak-Disposisi-Filter');
+  });
+
+  Route::prefix('laporan')->group(function () {
+    Route::GET('disposisi', 'LaporanController@Disposisi')->name('Laporan-Disposisi');
+    Route::POST('disposisi', 'LaporanController@DataDisposisi')->name('Data-Laporan-Disposisi');
   });
 });

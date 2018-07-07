@@ -5,7 +5,11 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">
           <a href="{{Route('Tambah-Disposisi')}}" class="btn btn-sm btn-info">Tambah Data</a>
-					<a href="{{Route('Cetak-Disposisi')}}" class="btn btn-sm btn-success" target="_blank">Cetak</a>
+					@if (!isset($Tahun))
+						<a href="{{Route('Cetak-Disposisi')}}" class="btn btn-sm btn-success" target="_blank">Cetak</a>
+					@else
+						<a href="{{Route('Cetak-Disposisi-Filter', ['Bulan' => $Bulan, 'Tahun' => $Tahun])}}" class="btn btn-sm btn-success" target="_blank">Cetak</a>
+					@endif
 				</div>
 				<div class="panel-body">
 					<table id="table_id" width="100%" class="table table-striped table-advance table-bordered">
