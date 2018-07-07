@@ -5,6 +5,7 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">
           <a href="{{Route('Tambah-Disposisi')}}" class="btn btn-sm btn-info">Tambah Data</a>
+					<a href="{{Route('Cetak-Disposisi')}}" class="btn btn-sm btn-success" target="_blank">Cetak</a>
 				</div>
 				<div class="panel-body">
 					<table id="table_id" width="100%" class="table table-striped table-advance table-bordered">
@@ -33,8 +34,9 @@
 									<td>{{$DataDisposisi->perihal}}</td>
 									<td class="text-center">
 										<span class="label label-info">
-											{{$DataDisposisi->StatusText}}</td>
+											{{$DataDisposisi->StatusText}}
 										</span>
+									</td>
 									<td class="text-center" style="white-space: nowrap;">
                     <a href="{{Route('Info-Disposisi', ['id' => HCrypt::Encrypt($DataDisposisi->id)])}}" class="btn btn-xs btn-primary">Info</a>
 										<a href="{{Route('Edit-Disposisi', ['id' => HCrypt::Encrypt($DataDisposisi->id)])}}" class="btn btn-xs btn-info">Edit</a>
