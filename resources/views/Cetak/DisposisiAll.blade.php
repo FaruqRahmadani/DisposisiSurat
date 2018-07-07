@@ -11,19 +11,27 @@
 		margin-left: 15px;
 		margin-right: 15px;
 	}
-	td, th {
+	th, td {
 		vertical-align:top;
 	}
 	.tabel-isi{
 		border-collapse: collapse;
 	}
 
-	.tabel-isi > thead{
+	.tabel-isi > thead > tr > th{
 		text-align: center;
+		padding-top: 10px;
+		padding-bottom: 10px;
 	}
 
 	.tabel-isi > thead > tr > th, .tabel-isi > tbody > tr > td {
 		border: solid 1px black;
+	}
+	.tabel-isi > tbody > tr > td {
+		padding-left: 6px;
+		padding-right: 6px;
+		padding-top: 5px;
+		padding-bottom: 5px;
 	}
 
 	</style>
@@ -48,6 +56,17 @@
 		</tr>
 	</table>
 	<hr>
+	<br>
+	<table width="100%" align="center">
+		<tr>
+			<td align="center">
+				<u><b>
+					LAPORAN SURAT MASUK PADA BULAN (XXXX) TAHUN (XXXX)
+				</b></u>
+			</td>
+		</tr>
+	</table>
+	<br>
 	<table class="tabel-isi" style="width:100%">
 		<thead>
 			<tr>
@@ -57,19 +76,19 @@
 				<th> Dari</th>
 				<th> Tanggal Surat</th>
 				<th> Sifat</th>
-				<th> Perihal</th>
+				{{-- <th> Perihal</th> --}}
 			</tr>
 		</thead>
 		<tbody>
 			@foreach ($Disposisi as $Index=>$DataDisposisi)
 				<tr>
-					<td>{{$Index+=1}}</td>
+					<td align="center">{{$Index+=1}}</td>
 					<td>{{$DataDisposisi->nomor_agenda}}</td>
-					<td>{{$DataDisposisi->JenisSurat}}</td>
+					<td align="center">{{$DataDisposisi->JenisSurat}}</td>
 					<td>{{$DataDisposisi->dari}}</td>
-					<td>{{$DataDisposisi->tanggal_surat}}</td>
-					<td>{{$DataDisposisi->SifatText}}</td>
-					<td>{{$DataDisposisi->perihal}}</td>
+					<td align="center">{{$DataDisposisi->tanggal_surat}}</td>
+					<td align="center">{{$DataDisposisi->SifatText}}</td>
+					{{-- <td>{{$DataDisposisi->perihal}}</td> --}}
 				</tr>
 			@endforeach
 		</tbody>
