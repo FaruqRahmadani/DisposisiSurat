@@ -12,7 +12,7 @@
 						<div class="form-group">
 							<label class="col-md-2 control-label">NIP</label>
 							<div class="col-md-10">
-								<input type="text" name="nip" class="form-control" required value="{{old('nip')}}">
+								<input type="text" name="nip" class="form-control" required pattern="[0-9\s]+" value="{{old('nip')}}">
 							</div>
 						</div>
 						<div class="form-group">
@@ -26,23 +26,23 @@
 							<div class="col-md-10">
 								<select name="golongan" class="form-control input-lg" required>
 									<option value="" selected hidden>Golongan</option>
-									<option value="IA">IA</option>
-									<option value="IB">IB</option>
-									<option value="IC">IC</option>
-									<option value="ID">ID</option>
-									<option value="IIA">IIA</option>
-									<option value="IIB">IIB</option>
-									<option value="IIC">IIC</option>
-									<option value="IID">IID</option>
-									<option value="IIIA">IIIA</option>
-									<option value="IIIB">IIIB</option>
-									<option value="IIIC">IIIC</option>
-									<option value="IIID">IIID</option>
-									<option value="IVA">IVA</option>
-									<option value="IVB">IVB</option>
-									<option value="IVC">IVC</option>
-									<option value="IVD">IVD</option>
-									<option value="IVE">IVE</option>
+									<option value="IA" {{old('golongan') == 'IA' ? 'selected' : ''}}>IA</option>
+									<option value="IB" {{old('golongan') == 'IB' ? 'selected' : ''}}>IB</option>
+									<option value="IC" {{old('golongan') == 'IC' ? 'selected' : ''}}>IC</option>
+									<option value="ID" {{old('golongan') == 'ID' ? 'selected' : ''}}>ID</option>
+									<option value="IIA"{{old('golongan') == 'IIA' ? 'selected' : ''}}>IIA</option>
+									<option value="IIB"{{old('golongan') == 'IIB' ? 'selected' : ''}}>IIB</option>
+									<option value="IIC"{{old('golongan') == 'IIC' ? 'selected' : ''}}>IIC</option>
+									<option value="IID"{{old('golongan') == 'IID' ? 'selected' : ''}}>IID</option>
+									<option value="IIIA" {{old('golongan') == 'IIIA' ? 'selected' : ''}}>IIIA</option>
+									<option value="IIIB" {{old('golongan') == 'IIIB' ? 'selected' : ''}}>IIIB</option>
+									<option value="IIIC" {{old('golongan') == 'IIIC' ? 'selected' : ''}}>IIIC</option>
+									<option value="IIID" {{old('golongan') == 'IIID' ? 'selected' : ''}}>IIID</option>
+									<option value="IVA" {{old('golongan') == 'IVA' ? 'selected' : ''}}>IVA</option>
+									<option value="IVB" {{old('golongan') == 'IVB' ? 'selected' : ''}}>IVB</option>
+									<option value="IVC" {{old('golongan') == 'IVC' ? 'selected' : ''}}>IVC</option>
+									<option value="IVD" {{old('golongan') == 'IVD' ? 'selected' : ''}}>IVD</option>
+									<option value="IVE" {{old('golongan') == 'IVE' ? 'selected' : ''}}>IVE</option>
 								</select>
 							</div>
 						</div>
