@@ -12,3 +12,4 @@ require('./Lumino/jquery.dataTables.min')
 require('./Lumino/jquery.dataTables.bootstrap.min')
 require('./Lumino/custom');
 require('./custom');
+require('./custom2');

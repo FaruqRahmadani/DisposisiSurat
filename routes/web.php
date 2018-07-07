@@ -52,4 +52,17 @@ Route::group(['middleware' => ['AuthMiddleware']], function () {
     Route::GET('', 'DisposisiStaffController@Data')->name('Data-Disposisi-Staff');
     Route::GET('terima/{id}', 'DisposisiStaffController@Terima')->name('Terima-Data-Disposisi-Staff');
   });
+
+  Route::prefix('kegiatan')->group(function () {
+    Route::GET('', 'KegiatanController@Data')->name('Data-Kegiatan');
+    Route::GET('tambah', 'KegiatanController@Tambah')->name('Tambah-Kegiatan');
+    Route::POST('tambah', 'KegiatanController@submitTambah')->name('submit-Tambah-Kegiatan');
+    Route::GET('edit/{id}', 'KegiatanController@Edit')->name('Edit-Kegiatan');
+    Route::POST('edit/{id}', 'KegiatanController@submitEdit')->name('submit-Edit-Kegiatan');
+    Route::GET('hapus/{id}', 'KegiatanController@Hapus')->name('Hapus-Kegiatan');
+  });
+
+  Route::prefix('cetak')->group(function () {
+    Route::GET('disposisi/{id?}', 'CetakController@Disposisi')->name('Cetak-Disposisi');
+  });
 });

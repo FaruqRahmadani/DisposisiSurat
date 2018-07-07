@@ -53,6 +53,16 @@
 							</tr>
 						</tbody>
 					</table>
+					<h4>Lampiran</h4>
+					<table class="table table-advance table-bordered">
+						<tbody>
+							<tr>
+								<th class="text-center">
+									<img src="{{asset('img/lampiran/'.$Disposisi->foto)}}">
+								</th>
+							</tr>
+						</tbody>
+					</table>
 					<hr>
 					<form class="form-horizontal row-border" action="{{ Route('submit-Update-Disposisi-Kepala-Dinas', ['Id' => HCrypt::Encrypt($Disposisi->id)]) }}" method="POST">
 						{{csrf_field()}}
@@ -89,7 +99,7 @@
 					<div class="form-group">
 						<label class="col-md-2 control-label">Catatan</label>
 						<div class="col-md-10">
-							<input type="text" name="catatan" class="form-control" required>
+							<textarea name="catatan" rows="8" cols="80" class="form-control" required></textarea>
 						</div>
 					</div>
 					<div class="row">

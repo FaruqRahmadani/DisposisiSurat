@@ -3,11 +3,8 @@
 	<div class="row">
 		<div class="col-md-12">
 			<div class="panel panel-default">
-				<div class="panel-heading">
-          <a href="{{Route('Tambah-Disposisi')}}" class="btn btn-sm btn-info">Tambah Data</a>
-				</div>
 				<div class="panel-body">
-					<table class="table table-striped table-advance table-bordered">
+					<table id="table_id" width="100%" class="table table-striped table-advance table-bordered">
 						<thead>
 							<tr>
 								<th class="text-center"> #</th>

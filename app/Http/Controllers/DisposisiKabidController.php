@@ -19,7 +19,7 @@ class DisposisiKabidController extends Controller
                                  ->pluck('disposisi_id')
                                  ->all();
     $Disposisi = Disposisi::whereIn('id', $DisposisiId)
-                          ->orderBy('id', 'desc')
+                          ->orderBy('created_at', 'desc')
                           ->get();
     return view('DisposisiKabid.Data', ['Disposisi' => $Disposisi]);
   }

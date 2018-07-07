@@ -33,3 +33,27 @@
     }
   }
 }
+
+.navbar-custom {
+    background: #3093ce;
+}
+
+.paginate_button{
+  display: contents !important;
+}
+
+.navbar-footer{
+  font-size: 12pt;
+  color: white;
+  line-height: 31px;
+}
+
+.dataTables_paginate{
+  text-align: right;
+}
+
+.active{
+  a{
+    background-color: #5ac1de !important;
+  }
+}

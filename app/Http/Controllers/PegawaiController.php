@@ -24,6 +24,7 @@ class PegawaiController extends Controller
   public function submitTambah(Request $request){
     $validatedData = $request->validate([
       'username' => 'unique:users',
+      'nip' => 'unique:pegawais,nip',
     ]);
 
     $ReqUser = $request->only(['username', 'password', 'tipe']);
@@ -50,6 +51,7 @@ class PegawaiController extends Controller
   }
 
   public function submitEdit(Request $request, $Id){
+
     if ($request->password) {
       $ReqUser = $request->only(['username', 'password']);
     }else{

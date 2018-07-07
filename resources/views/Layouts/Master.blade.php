@@ -6,6 +6,11 @@
   <title>Disposisi Surat</title>
   <link rel="shortcut icon" type="image/png" href="{{ asset('img/logo/Banjarbaru-icon.png') }}"/>
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+  <style>
+  .dataTables_paginate{
+    text-align: right;
+  }
+  </style>
 </head>
 <body>
   <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
@@ -21,7 +26,7 @@
           <span>
             <img src="{{ asset('img/logo/Banjarbaru.png') }}" alt="Banjarbaru">
           </span>
-          Dinas Kooperasi, Usaha Kecil, Menengah dan Tenaga Kerja
+          &nbsp; Manajemen Disposisi Surat
         </a>
       </div>
     </nav>
@@ -68,6 +73,11 @@
                   <em class="fa fa-dashboard">&nbsp;</em> Disposisi
                 </a>
               </li>
+              <li {{HRoute::ActiveRoute('Data-Kegiatan')}}>
+                <a href="{{ Route('Data-Kegiatan') }}">
+                  <em class="fa fa-dashboard">&nbsp;</em> Kegiatan
+                </a>
+              </li>
             @elseif (HAuth::Data()->bidang_id == 1)
               <li {{HRoute::ActiveRoute('Data-Disposisi-Kepala-Dinas')}}>
                 <a href="{{ Route('Data-Disposisi-Kepala-Dinas') }}">
@@ -105,16 +115,33 @@
         @yield('content')
       </div>
     </div>
-    <script src="{{ asset('js/app.js') }}"></script>
-    @if (session('alert'))
-      <script type="text/javascript">
-        notif('{{session('tipe')}}', '{{session('judul')}}', '{{session('pesan')}}');
-      </script>
-    @endif
-    @if ($errors->any())
-      <script type="text/javascript">
-        notif('error', 'Error', '{{ $errors->first() }}');
-      </script>
-    @endif
-  </body>
-  </html>
+    {{-- footer --}}
+    <nav class="navbar navbar-custom navbar-fixed-bottom">
+      <div class="container-fluid" style="line-height: 31px; font-size: 11pt; color: white; padding-top: 17;">
+        <center>
+          Dinas Koperasi, UKM & Tenaga Kerja, Jl. Soekarno-Hatta (Samping AKR) Trikora - Kota Banjarbaru
+        </center>
+      </nav>
+      {{-- <footer class="footer">
+      <div class="container-fluid">
+      <nav class="pull-left">
+      <ul>
+    </ul>
+  </nav>
+  <p class="copyright pull-right"> Dinas Koperasi, UKM & Tenaga Kerja, Jl. Soekarno-Hatta (Samping AKR) Trikora - Kota Banjarbaru</p>
+</div>
+</footer> --}}
+<script src="{{ asset('js/app.js') }}"></script>
+@if (session('alert'))
+  <script type="text/javascript">
+  notif('{{session('tipe')}}', '{{session('judul')}}', '{{session('pesan')}}');
+  </script>
+@endif
+@if ($errors->any())
+  <script type="text/javascript">
+  notif('error', 'Error', '{{ $errors->first() }}');
+  </script>
+@endif
+
+</body>
+</html>
