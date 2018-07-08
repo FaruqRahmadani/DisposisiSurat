@@ -75,8 +75,8 @@
 				<th> Jenis Surat</th>
 				<th> Dari</th>
 				<th> Tanggal Surat</th>
-				<th> Sifat</th>
-				{{-- <th> Perihal</th> --}}
+				{{-- <th> Sifat</th> --}}
+				<th> Perihal</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -87,8 +87,8 @@
 					<td align="center">{{$DataDisposisi->JenisSurat}}</td>
 					<td>{{$DataDisposisi->dari}}</td>
 					<td align="center">{{HTanggal::Format($DataDisposisi->tanggal_surat)}}</td>
-					<td align="center">{{$DataDisposisi->SifatText}}</td>
-					{{-- <td>{{$DataDisposisi->perihal}}</td> --}}
+					{{-- <td align="center">{{$DataDisposisi->SifatText}}</td> --}}
+					<td>{{$DataDisposisi->perihal}}</td>
 				</tr>
 			@endforeach
 		</tbody>

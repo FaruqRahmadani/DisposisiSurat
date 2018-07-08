@@ -25,12 +25,14 @@ class CetakController extends Controller
     }
   }
 
-  public function DisposisiFilter($Bulan, $Tahun){
+  public function DisposisiFilter($Bulan, $Tahun, $Tipe){
     $Disposisi = Disposisi::whereMonth('tanggal_surat', $Bulan)
                           ->whereYear('tanggal_surat', $Tahun)
-                          ->orderBy('created_at', 'desc')
-                          ->get();
-    $pdf = PDF::loadview('Cetak.DisposisiAllFilter', ['Disposisi' => $Disposisi, 'Bulan' => $Bulan, 'Tahun' => $Tahun]);
+                          ->orderBy('created_at', 'desc');
+    if ($Tipe) {
+      $Disposisi->where('tipe', $Tipe);
+    }
+    $pdf = PDF::loadview('Cetak.DisposisiAllFilter', ['Disposisi' => $Disposisi->get(), 'Bulan' => $Bulan, 'Tahun' => $Tahun]);
     return $pdf->setPaper('a4', 'potrait')->stream();
   }
 }

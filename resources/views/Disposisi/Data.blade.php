@@ -4,11 +4,11 @@
 		<div class="col-md-12">
 			<div class="panel panel-default">
 				<div class="panel-heading">
-          <a href="{{Route('Tambah-Disposisi')}}" class="btn btn-sm btn-info">Tambah Data</a>
 					@if (!isset($Tahun))
+						<a href="{{Route('Tambah-Disposisi')}}" class="btn btn-sm btn-info">Tambah Data</a>
 						<a href="{{Route('Cetak-Disposisi')}}" class="btn btn-sm btn-success" target="_blank">Cetak</a>
 					@else
-						<a href="{{Route('Cetak-Disposisi-Filter', ['Bulan' => $Bulan, 'Tahun' => $Tahun])}}" class="btn btn-sm btn-success" target="_blank">Cetak</a>
+						<a href="{{Route('Cetak-Disposisi-Filter', ['Bulan' => $Bulan, 'Tahun' => $Tahun, 'Tipe' => $Tipe])}}" class="btn btn-sm btn-success" target="_blank">Cetak</a>
 					@endif
 				</div>
 				<div class="panel-body">
@@ -23,7 +23,9 @@
                 <th class="text-center"> Sifat</th>
 								<th class="text-center"> Perihal</th>
                 <th class="text-center"> Status</th>
-								<th class="text-center"> Action</th>
+								@if (!isset($Tahun))
+									<th class="text-center"> Action</th>
+								@endif
 							</tr>
 						</thead>
 						<tbody>
@@ -41,14 +43,16 @@
 											{{$DataDisposisi->StatusText}}
 										</span>
 									</td>
-									<td class="text-center" style="white-space: nowrap;">
-                    <a href="{{Route('Info-Disposisi', ['id' => HCrypt::Encrypt($DataDisposisi->id)])}}" class="btn btn-xs btn-primary">Info</a>
-										<a href="{{Route('Edit-Disposisi', ['id' => HCrypt::Encrypt($DataDisposisi->id)])}}" class="btn btn-xs btn-info">Edit</a>
-                    <button class="btn btn-xs btn-danger" onclick="hapus('{{Route('Hapus-Disposisi', ['id' => HCrypt::Encrypt($DataDisposisi->id)])}}')">Hapus</button>
-										@if ($DataDisposisi->status == 127)
-											<a href="{{Route('Cetak-Disposisi', ['id' => HCrypt::Encrypt($DataDisposisi->id)])}}" class="btn btn-xs btn-success" target="_blank">Cetak</a>
-										@endif
-                  </td>
+									@if (!isset($Tahun))
+										<td class="text-center" style="white-space: nowrap;">
+	                    <a href="{{Route('Info-Disposisi', ['id' => HCrypt::Encrypt($DataDisposisi->id)])}}" class="btn btn-xs btn-primary">Info</a>
+											<a href="{{Route('Edit-Disposisi', ['id' => HCrypt::Encrypt($DataDisposisi->id)])}}" class="btn btn-xs btn-info">Edit</a>
+	                    <button class="btn btn-xs btn-danger" onclick="hapus('{{Route('Hapus-Disposisi', ['id' => HCrypt::Encrypt($DataDisposisi->id)])}}')">Hapus</button>
+											@if ($DataDisposisi->status == 127)
+												<a href="{{Route('Cetak-Disposisi', ['id' => HCrypt::Encrypt($DataDisposisi->id)])}}" class="btn btn-xs btn-success" target="_blank">Cetak</a>
+											@endif
+	                  </td>
+									@endif
 								</tr>
 							@endforeach
 						</tbody>
