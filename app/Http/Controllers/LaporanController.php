@@ -11,9 +11,10 @@ use App\Disposisi;
 class LaporanController extends Controller
 {
   public function Disposisi(){
-    $DateMax = Carbon::parse(Disposisi::min('tanggal_terima'));
+    $DateMax = Carbon::parse(Disposisi::max('tanggal_terima'));
+    $DateMin = Carbon::parse(Disposisi::min('tanggal_terima'));
 
-    return view('Laporan.Disposisi', ['DateMax' => $DateMax]);
+    return view('Laporan.Disposisi', ['DateMax' => $DateMax, 'DateMin' => $DateMin]);
   }
 
   public function DataDisposisi(Request $request){

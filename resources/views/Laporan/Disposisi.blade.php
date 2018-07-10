@@ -22,7 +22,7 @@
 									<span>Tahun</span>
 									<select class="form-control" name="tahun" required>
 										<option value="" selected hidden>Tahun</option>
-										@for ($i=$DateMax->format('Y'); $i <= Carbon\Carbon::now()->format('Y'); $i++)
+										@for ($i=$DateMin->format('Y'); $i <= $DateMax->format('Y'); $i++)
 											<option value="{{$i}}">{{$i}}</option>
 										@endfor
 									</select>

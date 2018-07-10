@@ -8,6 +8,7 @@
 						<a href="{{Route('Tambah-Disposisi')}}" class="btn btn-sm btn-info">Tambah Data</a>
 						<a href="{{Route('Cetak-Disposisi')}}" class="btn btn-sm btn-success" target="_blank">Cetak</a>
 					@else
+						<a href="{{ Route('Laporan-Disposisi') }}" class="btn btn-sm btn-info">Kembali</a>
 						<a href="{{Route('Cetak-Disposisi-Filter', ['Bulan' => $Bulan, 'Tahun' => $Tahun, 'Tipe' => $Tipe])}}" class="btn btn-sm btn-success" target="_blank">Cetak</a>
 					@endif
 				</div>
