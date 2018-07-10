@@ -12,7 +12,7 @@
 						<div class="form-group">
 							<label class="col-md-2 control-label">NIP</label>
 							<div class="col-md-10">
-								<input type="text" name="nip" class="form-control" required pattern="[0-9\s]+" value="{{old('nip')}}">
+								<input type="text" name="nip" class="form-control" required pattern="[0-9\s]+.{20,}" value="{{old('nip')}}">
 							</div>
 						</div>
 						<div class="form-group">

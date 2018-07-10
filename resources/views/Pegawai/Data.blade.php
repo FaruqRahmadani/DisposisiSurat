@@ -30,7 +30,7 @@
                   <td>{{$DataPegawai->JabatanText}}</td>
                   <td class="text-center">
                     <a href="{{Route('Edit-Pegawai', ['id' => HCrypt::Encrypt($DataPegawai->id)])}}" class="btn btn-xs btn-info">Edit</a>
-                    <button class="btn btn-xs btn-danger" onclick="hapus('{{Route('Hapus-Pegawai', ['id' => HCrypt::Encrypt($DataPegawai->id)])}}')">Hapus</button>
+                    {{-- <button class="btn btn-xs btn-danger" onclick="hapus('{{Route('Hapus-Pegawai', ['id' => HCrypt::Encrypt($DataPegawai->id)])}}')">Hapus</button> --}}
                   </td>
                 </tr>
               @endforeach
