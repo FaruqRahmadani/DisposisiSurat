@@ -12,7 +12,7 @@
 						<div class="form-group">
 							<label class="col-md-2 control-label">NIP</label>
 							<div class="col-md-10">
-								<input type="text" name="nip" class="form-control" required pattern="[0-9\s]+.{20,}" value="{{old('nip')}}">
+								<input type="text" name="nip" class="form-control" required pattern="[0-9\s]{19,19}" value="{{old('nip')}}">
 							</div>
 						</div>
 						<div class="form-group">
@@ -61,10 +61,10 @@
 							<label class="col-md-2 control-label">Jabatan</label>
 							<div class="col-md-10">
 								<label class="radio-inline">
-									<input type="radio" name="jabatan" value="1" {{old('jabatan') == 1 ? 'checked' : ''}}>Kepala Bidang
+									<input type="radio" name="jabatan" value="1" {{old('jabatan') == 1 ? 'checked' : ''}} required>Kepala Bidang
 								</label>
 								<label class="radio-inline">
-									<input type="radio" name="jabatan" value="2" {{old('jabatan') == 2 ? 'checked' : ''}}>Staf Bidang
+									<input type="radio" name="jabatan" value="2" {{old('jabatan') == 2 ? 'checked' : ''}} required>Staf Bidang
 								</label>
 							</div>
 						</div>
@@ -85,10 +85,10 @@
 							<label class="col-md-2 control-label">Hak Akses</label>
 							<div class="col-md-10">
 								<label class="radio-inline">
-									<input type="radio" name="tipe" value="0" {{old('tipe') == 0 ? 'checked' : ''}}>Non-Admin
+									<input type="radio" name="tipe" value="0" {{old('tipe') == 0 ? 'checked' : ''}} required>Non-Admin
 								</label>
 								<label class="radio-inline">
-									<input type="radio" name="tipe" value="1" {{old('tipe') == 1 ? 'checked' : ''}}>Admin
+									<input type="radio" name="tipe" value="1" {{old('tipe') == 1 ? 'checked' : ''}} required>Admin
 								</label>
 							</div>
 						</div>

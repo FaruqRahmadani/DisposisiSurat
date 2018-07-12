@@ -75,6 +75,8 @@ class PegawaiController extends Controller
   public function Hapus($Id){
     $Id = HCrypt::Decrypt($Id);
     $Pegawai = Pegawai::findOrFail($Id);
+    $User = User::findOrFail($Pegawai->user_id);
+    $User->delete();
     $Pegawai->delete();
 
     return redirect()->route('Data-Pegawai')->with(['alert' => 'alert', 'tipe' => 'success', 'judul' => 'Berhasil', 'pesan' => 'Data Berhasil di Hapus']);

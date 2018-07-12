@@ -144,7 +144,7 @@
 @endif
 @if ($errors->any())
   <script type="text/javascript">
-  notif('error', 'Error', '{{ $errors->first() }}');
+  notif('error', 'Terjadi Kesalahan', '{{ $errors->first() }}');
   </script>
 @endif
 
