@@ -10,6 +10,10 @@
   .dataTables_paginate{
     text-align: right;
   }
+  body {
+    background-image: url("/img/back.jpg");
+    background-repeat: repeat;
+  }
   </style>
 </head>
 <body>
