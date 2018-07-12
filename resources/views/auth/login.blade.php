@@ -30,4 +30,15 @@
       </div>
     </div>
   </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel-default">
+        <div class="panel-body">
+          <h1 align="center">
+            <img align="center" width="100%" src="{{ asset('img/foto_bersama.JPG') }}" alt="">
+          </h1>
+        </div>
+      </div>
+    </div>
+  </div>
 @endsection
