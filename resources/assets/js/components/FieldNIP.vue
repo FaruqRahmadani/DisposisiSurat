@@ -20,22 +20,30 @@ export default {
   },
   methods: {
     cekNIP(){
+      var tahunNIP = this.nip.slice(0,4);
+
+      console.log(tahunNIP);
       if ((this.nip.length == 18) && ((this.nip != this.value))) {
-        axios({
-        method: 'get',
-        url: '/api/nip/'+this.nip,
-      }).then((response) => {
-        console.log(response.data)
-        if (response.data) {
-          $( "#nip" ).addClass( "has-error" );
-          $( "#submit" ).prop('disabled', true);
+        if (tahunNIP >= 2000) {
+          $("#label_nip").text("Tahun Lahir NIP Salah");
           $( "#label_nip" ).removeClass( "hidden" );
         }else{
-          $( "#nip" ).removeClass( "has-error" );
-          $( "#label_nip" ).addClass( "hidden" );
-          $( "#submit" ).prop('disabled', false);
+          axios({
+            method: 'get',
+            url: '/api/nip/'+this.nip,
+          }).then((response) => {
+            console.log(response.data)
+            if (response.data) {
+              $("#label_nip").text("NIP Sudah Ada");
+              $( "#nip" ).addClass( "has-error" );
+              $( "#submit" ).prop('disabled', true);
+            }else{
+              $( "#nip" ).removeClass( "has-error" );
+              $( "#label_nip" ).addClass( "hidden" );
+              $( "#submit" ).prop('disabled', false);
+            }
+          })
         }
-      })
       }
     }
   }
