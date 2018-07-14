@@ -20,7 +20,7 @@ export default {
   },
   methods: {
     cekNIP(){
-      if (this.nip.length == 18) {
+      if ((this.nip.length == 18) && ((this.nip != this.value))) {
         axios({
         method: 'get',
         url: '/api/nip/'+this.nip,

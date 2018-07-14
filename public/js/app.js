@@ -68585,7 +68585,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
   methods: {
     cekNIP: function cekNIP() {
-      if (this.nip.length == 18) {
+      if (this.nip.length == 18 && this.nip != this.value) {
         axios({
           method: 'get',
           url: '/api/nip/' + this.nip

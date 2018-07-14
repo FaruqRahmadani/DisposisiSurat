@@ -9,12 +9,7 @@
 				<div class="panel-body">
 					<form class="form-horizontal row-border" action="{{ Route('submit-Edit-Pegawai', ['Id' => HCrypt::Encrypt($Pegawai->id)]) }}" method="POST">
 						{{csrf_field()}}
-						<div class="form-group">
-							<label class="col-md-2 control-label">NIP</label>
-							<div class="col-md-10">
-								<input id="nip" type="text" name="nip" class="form-control" minlength="18" maxlength="18" required pattern="[0-9\s]{18,18}" value="{{$Pegawai->nip}}">
-							</div>
-						</div>
+						<field-nip value="{{$Pegawai->nip}}"></field-nip>
 						<div class="form-group">
 							<label class="col-md-2 control-label">Nama</label>
 							<div class="col-md-10">
