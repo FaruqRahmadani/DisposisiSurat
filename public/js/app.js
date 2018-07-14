@@ -68169,6 +68169,12 @@ var vm = new Vue({
   el: '#app'
 });
 
+$('#nip').on('keypress', function (e) {
+  var charCode = e.which ? e.which : event.keyCode;
+  if (charCode > 31 && (charCode < 48 || charCode > 57)) return false;
+  return true;
+});
+
 window.notif = function (tipe, judul, pesan) {
   __WEBPACK_IMPORTED_MODULE_0_sweetalert___default()({
     title: judul,
