@@ -12,7 +12,7 @@
 						<div class="form-group">
 							<label class="col-md-2 control-label">Nama Bidang</label>
 							<div class="col-md-10">
-								<input type="text" name="nama" class="form-control" required>
+								<input type="text" name="nama" class="form-control" value="{{old('nama')}}" required>
 							</div>
 						</div>
 						<div class="row">
