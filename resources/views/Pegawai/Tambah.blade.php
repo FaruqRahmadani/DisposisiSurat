@@ -12,7 +12,7 @@
 						<div class="form-group">
 							<label class="col-md-2 control-label">NIP</label>
 							<div class="col-md-10">
-								<input type="text" name="nip" class="form-control" minlength="18" maxlength="18" required pattern="[0-9\s]{18,18}" value="{{old('nip')}}">
+								<input type="text" name="nip" class="form-control" minlength="18" maxlength="18" required pattern="[0-9\s]{18,18}" value="{{old('nip')}}" onkeypress="return hanyaAngka(event)">
 							</div>
 						</div>
 						<div class="form-group">
