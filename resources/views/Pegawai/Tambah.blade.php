@@ -9,12 +9,7 @@
 				<div class="panel-body">
 					<form class="form-horizontal row-border" action="{{ Route('submit-Tambah-Pegawai') }}" method="POST">
 						{{csrf_field()}}
-						<div class="form-group">
-							<label class="col-md-2 control-label">NIP</label>
-							<div class="col-md-10">
-								<input id="nip" type="text" name="nip" class="form-control" minlength="18" maxlength="18" required pattern="[0-9\s]{18,18}" value="{{old('nip')}}">
-							</div>
-						</div>
+						<field-nip></field-nip>
 						<div class="form-group">
 							<label class="col-md-2 control-label">Nama</label>
 							<div class="col-md-10">
@@ -95,7 +90,7 @@
 						<div class="row">
 							<div class="text-center">
 								<div class="col-md-12">
-									<button type="submit" class="btn btn-info btn-fill">Simpan</button>
+									<button type="submit" class="btn btn-info btn-fill" id="submit">Simpan</button>
 									<button type="reset" class="btn btn-warning btn-fill">Batal</button>
 								</div>
 							</div>

@@ -1,6 +1,7 @@
 import swal from 'sweetalert';
 
 Vue.component('button-logout', require('./components/ButtonLogout.vue'));
+Vue.component('field-nip', require('./components/FieldNIP.vue'));
 
 var vm = new Vue({
   el: '#app',
