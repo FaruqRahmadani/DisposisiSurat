@@ -10,6 +10,10 @@
   .dataTables_paginate{
     text-align: right;
   }
+  body {
+    background-image: url("/img/back.jpg");
+    background-repeat: repeat;
+  }
   </style>
 </head>
 <body>
@@ -78,6 +82,11 @@
                   <em class="fa fa-dashboard">&nbsp;</em> Kegiatan
                 </a>
               </li>
+              <li {{HRoute::ActiveRoute('Laporan-Disposisi')}}>
+                <a href="{{ Route('Laporan-Disposisi') }}">
+                  <em class="fa fa-dashboard">&nbsp;</em> Laporan Disposisi
+                </a>
+              </li>
             @elseif (HAuth::Data()->bidang_id == 1)
               <li {{HRoute::ActiveRoute('Data-Disposisi-Kepala-Dinas')}}>
                 <a href="{{ Route('Data-Disposisi-Kepala-Dinas') }}">
@@ -139,7 +148,7 @@
 @endif
 @if ($errors->any())
   <script type="text/javascript">
-  notif('error', 'Error', '{{ $errors->first() }}');
+  notif('error', 'Terjadi Kesalahan', '{{ $errors->first() }}');
   </script>
 @endif
 

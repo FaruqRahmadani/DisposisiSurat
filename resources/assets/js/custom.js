@@ -1,9 +1,18 @@
 import swal from 'sweetalert';
 
 Vue.component('button-logout', require('./components/ButtonLogout.vue'));
+Vue.component('field-nip', require('./components/FieldNIP.vue'));
 
 var vm = new Vue({
   el: '#app',
+});
+
+$('#nip').on('keypress', function(e) {
+  var charCode = (e.which) ? e.which : event.keyCode
+  if (charCode > 31 && (charCode < 48 || charCode > 57))
+
+  return false;
+  return true;
 });
 
 window.notif = function (tipe, judul, pesan){

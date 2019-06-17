@@ -12996,3 +12996,7 @@ p.back-link {
 .active a {
   background-color: #5ac1de !important;
 }
+
+.has-error {
+  border: 1px solid #f9243f !important;
+}

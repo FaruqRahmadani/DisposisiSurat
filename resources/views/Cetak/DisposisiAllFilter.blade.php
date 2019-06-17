@@ -61,7 +61,7 @@
 		<tr>
 			<td align="center">
 				<u><b>
-					LAPORAN SURAT DISPOSISI
+					LAPORAN SURAT MASUK PADA BULAN {{HTanggal::NamaBulan($Bulan)}} TAHUN {{$Tahun}}
 				</b></u>
 			</td>
 		</tr>

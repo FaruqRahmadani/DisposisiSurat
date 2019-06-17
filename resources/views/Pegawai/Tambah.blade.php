@@ -9,12 +9,7 @@
 				<div class="panel-body">
 					<form class="form-horizontal row-border" action="{{ Route('submit-Tambah-Pegawai') }}" method="POST">
 						{{csrf_field()}}
-						<div class="form-group">
-							<label class="col-md-2 control-label">NIP</label>
-							<div class="col-md-10">
-								<input type="text" name="nip" class="form-control" required value="{{old('nip')}}">
-							</div>
-						</div>
+						<field-nip></field-nip>
 						<div class="form-group">
 							<label class="col-md-2 control-label">Nama</label>
 							<div class="col-md-10">
@@ -26,23 +21,23 @@
 							<div class="col-md-10">
 								<select name="golongan" class="form-control input-lg" required>
 									<option value="" selected hidden>Golongan</option>
-									<option value="IA">IA</option>
-									<option value="IB">IB</option>
-									<option value="IC">IC</option>
-									<option value="ID">ID</option>
-									<option value="IIA">IIA</option>
-									<option value="IIB">IIB</option>
-									<option value="IIC">IIC</option>
-									<option value="IID">IID</option>
-									<option value="IIIA">IIIA</option>
-									<option value="IIIB">IIIB</option>
-									<option value="IIIC">IIIC</option>
-									<option value="IIID">IIID</option>
-									<option value="IVA">IVA</option>
-									<option value="IVB">IVB</option>
-									<option value="IVC">IVC</option>
-									<option value="IVD">IVD</option>
-									<option value="IVE">IVE</option>
+									<option value="IA" {{old('golongan') == 'IA' ? 'selected' : ''}}>IA</option>
+									<option value="IB" {{old('golongan') == 'IB' ? 'selected' : ''}}>IB</option>
+									<option value="IC" {{old('golongan') == 'IC' ? 'selected' : ''}}>IC</option>
+									<option value="ID" {{old('golongan') == 'ID' ? 'selected' : ''}}>ID</option>
+									<option value="IIA"{{old('golongan') == 'IIA' ? 'selected' : ''}}>IIA</option>
+									<option value="IIB"{{old('golongan') == 'IIB' ? 'selected' : ''}}>IIB</option>
+									<option value="IIC"{{old('golongan') == 'IIC' ? 'selected' : ''}}>IIC</option>
+									<option value="IID"{{old('golongan') == 'IID' ? 'selected' : ''}}>IID</option>
+									<option value="IIIA" {{old('golongan') == 'IIIA' ? 'selected' : ''}}>IIIA</option>
+									<option value="IIIB" {{old('golongan') == 'IIIB' ? 'selected' : ''}}>IIIB</option>
+									<option value="IIIC" {{old('golongan') == 'IIIC' ? 'selected' : ''}}>IIIC</option>
+									<option value="IIID" {{old('golongan') == 'IIID' ? 'selected' : ''}}>IIID</option>
+									<option value="IVA" {{old('golongan') == 'IVA' ? 'selected' : ''}}>IVA</option>
+									<option value="IVB" {{old('golongan') == 'IVB' ? 'selected' : ''}}>IVB</option>
+									<option value="IVC" {{old('golongan') == 'IVC' ? 'selected' : ''}}>IVC</option>
+									<option value="IVD" {{old('golongan') == 'IVD' ? 'selected' : ''}}>IVD</option>
+									<option value="IVE" {{old('golongan') == 'IVE' ? 'selected' : ''}}>IVE</option>
 								</select>
 							</div>
 						</div>
@@ -61,10 +56,10 @@
 							<label class="col-md-2 control-label">Jabatan</label>
 							<div class="col-md-10">
 								<label class="radio-inline">
-									<input type="radio" name="jabatan" value="1" {{old('jabatan') == 1 ? 'checked' : ''}}>Kepala Bidang
+									<input type="radio" name="jabatan" value="1" {{old('jabatan') == 1 ? 'checked' : ''}} required>Kepala Bidang
 								</label>
 								<label class="radio-inline">
-									<input type="radio" name="jabatan" value="2" {{old('jabatan') == 2 ? 'checked' : ''}}>Staf Bidang
+									<input type="radio" name="jabatan" value="2" {{old('jabatan') == 2 ? 'checked' : ''}} required>Staf Bidang
 								</label>
 							</div>
 						</div>
@@ -85,17 +80,17 @@
 							<label class="col-md-2 control-label">Hak Akses</label>
 							<div class="col-md-10">
 								<label class="radio-inline">
-									<input type="radio" name="tipe" value="0" {{old('tipe') == 0 ? 'checked' : ''}}>Non-Admin
+									<input type="radio" name="tipe" value="0" {{old('tipe') == 0 ? 'checked' : ''}} required>Non-Admin
 								</label>
 								<label class="radio-inline">
-									<input type="radio" name="tipe" value="1" {{old('tipe') == 1 ? 'checked' : ''}}>Admin
+									<input type="radio" name="tipe" value="1" {{old('tipe') == 1 ? 'checked' : ''}} required>Admin
 								</label>
 							</div>
 						</div>
 						<div class="row">
 							<div class="text-center">
 								<div class="col-md-12">
-									<button type="submit" class="btn btn-info btn-fill">Simpan</button>
+									<button type="submit" class="btn btn-info btn-fill" id="submit">Simpan</button>
 									<button type="reset" class="btn btn-warning btn-fill">Batal</button>
 								</div>
 							</div>

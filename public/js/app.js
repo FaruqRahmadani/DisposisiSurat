@@ -68164,9 +68164,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 Vue.component('button-logout', __webpack_require__(52));
+Vue.component('field-nip', __webpack_require__(62));
 
 var vm = new Vue({
   el: '#app'
+});
+
+$('#nip').on('keypress', function (e) {
+  var charCode = e.which ? e.which : event.keyCode;
+  if (charCode > 31 && (charCode < 48 || charCode > 57)) return false;
+  return true;
 });
 
 window.notif = function (tipe, judul, pesan) {
@@ -68487,11 +68494,192 @@ $('#table_id').DataTable({
   responsive: true
 });
 
+function hanyaAngka(evt) {
+  var charCode = evt.which ? evt.which : event.keyCode;
+  if (charCode > 31 && (charCode < 48 || charCode > 57)) return false;
+  return true;
+}
+
 /***/ }),
 /* 57 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 58 */,
+/* 59 */,
+/* 60 */,
+/* 61 */,
+/* 62 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(53)
+/* script */
+var __vue_script__ = __webpack_require__(63)
+/* template */
+var __vue_template__ = __webpack_require__(64)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/FieldNIP.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-2d2ed672", Component.options)
+  } else {
+    hotAPI.reload("data-v-2d2ed672", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 63 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['value'],
+  data: function data() {
+    return {
+      nip: this.value
+    };
+  },
+  methods: {
+    cekNIP: function cekNIP() {
+      var tahunNIP = this.nip.slice(0, 4);
+
+      console.log(tahunNIP);
+      if (this.nip.length == 18 && this.nip != this.value) {
+        if (tahunNIP >= 2000) {
+          $("#label_nip").text("Tahun Lahir NIP Salah");
+          $("#label_nip").removeClass("hidden");
+        } else {
+          axios({
+            method: 'get',
+            url: '/api/nip/' + this.nip
+          }).then(function (response) {
+            console.log(response.data);
+            if (response.data) {
+              $("#label_nip").text("NIP Sudah Ada");
+              $("#nip").addClass("has-error");
+              $("#submit").prop('disabled', true);
+            } else {
+              $("#nip").removeClass("has-error");
+              $("#label_nip").addClass("hidden");
+              $("#submit").prop('disabled', false);
+            }
+          });
+        }
+      }
+    }
+  }
+});
+
+/***/ }),
+/* 64 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("div", { staticClass: "form-group" }, [
+      _c("label", { staticClass: "col-md-2 control-label" }, [_vm._v("NIP")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-md-10" }, [
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.nip,
+              expression: "nip"
+            }
+          ],
+          staticClass: "form-control",
+          attrs: {
+            id: "nip",
+            type: "text",
+            name: "nip",
+            minlength: "18",
+            maxlength: "18",
+            required: "",
+            pattern: "[0-9\\s]{18,18}"
+          },
+          domProps: { value: _vm.nip },
+          on: {
+            keyup: _vm.cekNIP,
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.nip = $event.target.value
+            }
+          }
+        }),
+        _vm._v(" "),
+        _c(
+          "label",
+          {
+            staticClass: "control-label hidden",
+            staticStyle: { color: "red" },
+            attrs: { id: "label_nip" }
+          },
+          [_vm._v("NIP Sudah Ada")]
+        )
+      ])
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-2d2ed672", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

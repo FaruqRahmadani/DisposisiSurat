@@ -19,6 +19,11 @@ class BidangController extends Controller
   }
 
   public function submitTambah(Request $request){
+    $Bidang = Bidang::where('nama', $request->nama)->count();
+    if ($Bidang) {
+      return back()->withInput()->with(['alert' => 'alert', 'tipe' => 'error', 'judul' => 'Terjadi Kesalahan', 'pesan' => 'Nama Bidang Sudah Ada']);
+    }
+
     $Bidang = new Bidang;
     $Bidang->fill($request->all());
     $Bidang->save();
@@ -36,6 +41,12 @@ class BidangController extends Controller
   public function submitEdit(Request $request, $Id){
     $Id = HCrypt::Decrypt($Id);
     $Bidang = Bidang::findOrFail($Id);
+    if ($Bidang->nama != $request->nama) {
+      $BidangValidate = Bidang::where('nama', $request->nama)->count();
+      if ($BidangValidate) {
+        return back()->withInput()->with(['alert' => 'alert', 'tipe' => 'error', 'judul' => 'Terjadi Kesalahan', 'pesan' => 'Nama Bidang Sudah Ada']);
+      }
+    }
     $Bidang->fill($request->all());
     $Bidang->save();
 
